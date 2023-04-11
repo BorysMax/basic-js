@@ -13,7 +13,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  function getEmailDomain(email) {
   //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
-    let res = email.split('@');    
+  let res = email.split('@');    
   return res[res.length - 1];
 }
 

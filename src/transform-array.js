@@ -36,8 +36,8 @@ const { NotImplementedError } = require('../extensions/index.js');
         if (arr[i] === action[1]) {
             arrRes.pop();
             if (i !== 0) arrRes.pop();
-            break;            
-        }    
+            break;
+        }
         if (arr[i] === action[2]) {
             arrRes.pop();
             if (i !== arr.length-1) arrRes.push(arr[i+1]);
@@ -47,7 +47,7 @@ const { NotImplementedError } = require('../extensions/index.js');
             arrRes.pop();
             if (i !== 0) arrRes.push(arrRes[arrRes.length-1]);
             break;
-        }    
+        }
       }
     i++;
   }        
