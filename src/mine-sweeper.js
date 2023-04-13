@@ -23,9 +23,38 @@ const { NotImplementedError } = require('../extensions/index.js');
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
+function minesweeper(matrix) {
+  //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
+
+  function isCellExists(matrix, i, j) {
+    if (i < 0 || j < 0 || i >= matrix.length || j >= matrix[0].length) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  const res = [];
+  for (let i = 0; i < matrix.length; i++) {
+    res.push([]);
+    for (let j = 0; j < matrix[0].length; j++) {
+      let number = 0;
+      if (isCellExists(matrix, i-1, j-1) && matrix[i-1][j-1]) number++;
+      if (isCellExists(matrix, i-1, j) && matrix[i-1][j]) number++;
+      if (isCellExists(matrix, i-1, j+1) && matrix[i-1][j+1]) number++;
+
+      if (isCellExists(matrix, i, j-1) && matrix[i][j-1]) number++;
+      if (isCellExists(matrix, i, j+1) && matrix[i][j+1]) number++;
+
+      if (isCellExists(matrix, i+1, j-1) && matrix[i+1][j-1]) number++;
+      if (isCellExists(matrix, i+1, j) && matrix[i+1][j]) number++;
+      if (isCellExists(matrix, i+1, j+1) && matrix[i+1][j+1]) number++;
+
+      res[i][j] = number;
+    }
+  }
+  return res;
 }
 
 module.exports = {
