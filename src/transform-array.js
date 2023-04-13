@@ -50,7 +50,7 @@ const { NotImplementedError } = require('../extensions/index.js');
         }
       }
     i++;
-  }        
+  }
 return arrRes;
 }
 
